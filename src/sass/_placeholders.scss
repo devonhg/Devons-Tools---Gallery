@@ -1,0 +1,18 @@
+/*********************
+* Turn into Gallery
+*********************/
+
+%plc_gallery{
+	@include container; 
+	article.ar_shortcode{
+		padding: gutter(); 
+		@include gallery( 2 ); 
+		margin-top: 9px; 
+	}
+
+	@include bp-small{
+		article.ar_shortcode{
+			@include gallery( 6 ); 
+		}		
+	}
+}

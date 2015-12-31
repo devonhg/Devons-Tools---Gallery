@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'WPINC' ) ) { die; }
 
-class MYPLUGIN_pt_sc{
+class DTGAL_pt_sc{
     
     static $instances = array(); 
 	public $pt;
@@ -12,7 +12,7 @@ class MYPLUGIN_pt_sc{
 
     public function __construct($pt, $par, $name, $desc, $query = array() ){
     
-        MYPLUGIN_pt_sc::$instances[] = $this; 
+        DTGAL_pt_sc::$instances[] = $this; 
     	$this->pt = $pt;
         $this->par = $par; 
         $this->name = $name; 
@@ -36,7 +36,7 @@ class MYPLUGIN_pt_sc{
 
         //Set up Query Arrays
             $query_att = $this->query;
-            $sc_att = MYPLUGIN_func::asc_string_to_array( htmlspecialchars_decode($wpargs) );
+            $sc_att = DTGAL_func::asc_string_to_array( htmlspecialchars_decode($wpargs) );
             $base_att = array( "post_type" => $this->pt );
 
             if ( $cats !== '' && isset( $query_att['tax_query'] ) ){
@@ -47,6 +47,7 @@ class MYPLUGIN_pt_sc{
 
         $this->par->reg_hooks_sc();
         
+        $out .= "<div class='" . $this->pt . "-sc-wrapper'>";
         $quer = new WP_Query ( $argOut );
             while ( $quer->have_posts() ) : $quer->the_post();
                 ob_start();
@@ -54,6 +55,7 @@ class MYPLUGIN_pt_sc{
                 $out .= ob_get_clean();
             endwhile; 
         wp_reset_postdata();
+        $out .= "</div>";
         
 
         return $out;

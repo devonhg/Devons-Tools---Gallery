@@ -1,0 +1,155 @@
+/**************************
+* Imports
+**************************/
+/****************
+* Set Font Size
+****************/
+/*
+Usage
+	p {
+	  @include font-size(14px)
+	}
+Output
+	p {
+	  font-size: 14px; //Will be overridden if browser supports rem
+	  font-size: 0.8rem;
+	}
+*/
+/****************
+* Breakpoints
+****************/
+/*
+Usage
+	.sidebar {
+	  width: 60%;
+	  float: left;
+	  margin: 0 2% 0 0;
+	  @include bp-small {
+	    width: 100%;
+	    float: none;
+	    margin: 0;
+	  }
+	}
+Output
+	.sidebar {
+	  width: 60%;
+	  float: left;
+	  margin: 0 2% 0 0;
+	  @media only screen and (max-width: 30){
+	    .sidebar{width: 100%; float: none; margin: 0;}
+	  }
+	}
+*/
+/****************
+* Transitions
+****************/
+/*
+Usage
+	a {
+	  color: gray;
+	  @include transition(color .3s ease);
+	  &:hover {
+	    color: black;
+	  }
+	}
+*/
+/***********************
+* Cross-Browser Opacity
+***********************/
+/*
+Usage
+	.faded-text {
+	  @include opacity(0.8);
+	}
+*/
+/***********************
+* Clearfix
+***********************/
+/*
+Usage
+	.container-with-floated-children {
+	  @extend %clearfix;
+	}
+*/
+/***********************
+* Box Shadow
+***********************/
+/********************
+* Rounded
+********************/
+/*********************
+* Turn into Gallery
+*********************/
+.pt_portfolio_pieces-sc-wrapper {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto; }
+  .pt_portfolio_pieces-sc-wrapper:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .pt_portfolio_pieces-sc-wrapper article.ar_shortcode {
+    padding: 1.69492%;
+    width: 15.25424%;
+    float: left;
+    margin-top: 9px; }
+    .pt_portfolio_pieces-sc-wrapper article.ar_shortcode:nth-child(6n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    .pt_portfolio_pieces-sc-wrapper article.ar_shortcode:nth-child(6n + 2) {
+      margin-left: 16.94915%;
+      margin-right: -100%;
+      clear: none; }
+    .pt_portfolio_pieces-sc-wrapper article.ar_shortcode:nth-child(6n + 3) {
+      margin-left: 33.89831%;
+      margin-right: -100%;
+      clear: none; }
+    .pt_portfolio_pieces-sc-wrapper article.ar_shortcode:nth-child(6n + 4) {
+      margin-left: 50.84746%;
+      margin-right: -100%;
+      clear: none; }
+    .pt_portfolio_pieces-sc-wrapper article.ar_shortcode:nth-child(6n + 5) {
+      margin-left: 67.79661%;
+      margin-right: -100%;
+      clear: none; }
+    .pt_portfolio_pieces-sc-wrapper article.ar_shortcode:nth-child(6n + 6) {
+      margin-left: 84.74576%;
+      margin-right: -100%;
+      clear: none; }
+  @media only screen and (max-width: 30em) {
+    .pt_portfolio_pieces-sc-wrapper article.ar_shortcode {
+      width: 49.15254%;
+      float: left; }
+      .pt_portfolio_pieces-sc-wrapper article.ar_shortcode:nth-child(2n + 1) {
+        margin-left: 0;
+        margin-right: -100%;
+        clear: both;
+        margin-left: 0; }
+      .pt_portfolio_pieces-sc-wrapper article.ar_shortcode:nth-child(2n + 2) {
+        margin-left: 50.84746%;
+        margin-right: -100%;
+        clear: none; } }
+
+.pt_portfolio_pieces-sc-wrapper img {
+  width: 100%;
+  height: auto; }
+
+.single .type-pt_portfolio_pieces ul {
+  list-style-type: none; }
+.single .type-pt_portfolio_pieces .meta-key,
+.single .type-pt_portfolio_pieces .DTGAL-categories h3 {
+  font-size: 150%;
+  font-weight: bold;
+  margin: 4px 0;
+  display: block;
+  padding: 3px; }
+.single .type-pt_portfolio_pieces .meta-value,
+.single .type-pt_portfolio_pieces .meta-key,
+.single .type-pt_portfolio_pieces .DTGAL-categories {
+  display: block;
+  text-align: center; }
+
+/*# sourceMappingURL=sass.css.map */
+

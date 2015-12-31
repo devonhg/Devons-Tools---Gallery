@@ -1,0 +1,7 @@
+.pt_portfolio_pieces-sc-wrapper{
+	@extend %obj-image-gallery;
+}
+
+.single .type-pt_portfolio_pieces{
+	@extend %obj-post-single
+}

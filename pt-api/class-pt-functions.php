@@ -2,7 +2,7 @@
 if ( ! defined( 'WPINC' ) ) { die; }
 
 //This is a static class that contains functions important to the plugin. 
-class MYPLUGIN_func{
+class DTGAL_func{
 
 	//This is the core function behind the hooks
 	public static function get_post( $quer = null ){
@@ -15,7 +15,7 @@ class MYPLUGIN_func{
 	//This is the function that prints the meta for any given post.
 	public static function print_meta( $ID ){
 		$out = "";
-		$pst_meta = MYPLUGIN_pt_meta::$instances;
+		$pst_meta = DTGAL_pt_meta::$instances;
 		$out .= "<ul>";
 			foreach($pst_meta as $key){
 				if ( ($key->get_val( $ID ) != null && $key->get_val( $ID ) != "") && 
@@ -25,7 +25,7 @@ class MYPLUGIN_func{
 
 					$out .= "<li>";
 						$out .= "<label class='meta-key' >" . ucfirst( $key->title ) . "</label>";
-						$out .= ' : <label class="meta-value"> ' . $key->get_val() . '</label>';
+						$out .= '<label class="meta-value"> ' . $key->get_val() . '</label>';
 					$out .= "</li>";
 				}
 			} 
@@ -37,7 +37,7 @@ class MYPLUGIN_func{
 	//Much like meta, only for media (images, video, etc.)
 	public static function print_media( $ID ){
 		$out = "";
-		$pst_meta = MYPLUGIN_pt_meta::$instances;
+		$pst_meta = DTGAL_pt_meta::$instances;
 		$out .= "<ul class='media-list'>";
 			foreach($pst_meta as $key){
 				if ( $key->pt == get_post_type( $ID ) && !( $key->hidden ) && $key->type == "media" ){
@@ -67,7 +67,7 @@ class MYPLUGIN_func{
 	}
 
 	// Function by David Paulsson, get ID from slug. Modified to also consider post type by Devon Godfrey.  
-	// MYPLUGIN_get_id_by_slug('any-page-slug');
+	// DTGAL_get_id_by_slug('any-page-slug');
 	public static function get_id_by_slug($page_slug, $pt) {
 		$page = get_page_by_path($page_slug, OBJECT, $pt);
 		if ($page) {
@@ -83,7 +83,7 @@ class MYPLUGIN_func{
 	    $tax_terms = get_terms( $tax );
 	    $tax_info = get_taxonomy( $tax ); 
 
-	    $pID = MYPLUGIN_func::get_id_by_slug( $post_slug, $pt );
+	    $pID = DTGAL_func::get_id_by_slug( $post_slug, $pt );
 
 	    if ( ! empty( $tax_terms ) ){
 	            foreach ($tax_terms as $tax_term){
@@ -177,7 +177,7 @@ class MYPLUGIN_func{
 	public static function is_pt(){
 		global $post; 
 
-		foreach( MYPLUGIN_post_type::$instances as $instance ){
+		foreach( DTGAL_post_type::$instances as $instance ){
 			if ( $post->post_type == $instance->pt_slug ){
 				return true; 
 			}

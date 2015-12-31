@@ -1,0 +1,25 @@
+%obj-image-gallery{
+	@extend %plc_gallery;
+	img{
+		width: 100%;
+		height: auto; 
+	}
+}
+
+%obj-post-single{
+	ul{ list-style-type: none; }
+	.meta-key,
+	.DTGAL-categories h3{ 
+		font-size: 150%; 
+		font-weight: bold; 
+		margin: 4px 0; 
+		display: block; 
+		padding: 3px; 
+	}
+	.meta-value,
+	.meta-key,
+	.DTGAL-categories{
+		display:block;
+		text-align: center; 
+	}
+}
