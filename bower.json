@@ -1,0 +1,22 @@
+{
+  "name": "dt-gallery",
+  "version": "0.0.0",
+  "homepage": "https://github.com/devonhg/Devons-Tools---Gallery",
+  "authors": [
+    "devonhg <devon.hugh.godfrey@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.9"
+  }
+}
